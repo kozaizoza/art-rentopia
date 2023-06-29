@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+
+  gap: 10px;
+}
+.navbar {
+  display: flex;
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.navbar li {
+  margin-left: 10px;
+}
+
+.navbar li:first-child {
+  margin-left: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #000;
+}
+.button {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px 16px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  &:hover {
+    background-color: #4d55e9;
+    transform: scale(1.05);
+  }
+}
+.register {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #838181;
+    transform: scale(1.05);
+  }
+}
+.username {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+
+  gap: 10px;
+}

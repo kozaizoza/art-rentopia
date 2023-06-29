@@ -1,0 +1,17 @@
+.link {
+  margin: 30px;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#007bff, 10%);
+  }
+}
+.artworkPage {
+  text-align: center;
+  font-size: 20px;
+}

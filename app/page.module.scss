@@ -1,0 +1,41 @@
+$primaryColor: #333;
+$secondaryColor: #666;
+
+.h1 {
+  margin-top: 20px;
+}
+
+.supportSection {
+  text-align: center;
+  margin-top: 5px;
+  background-color: #f9f9f9;
+
+  p {
+    font-size: 16px;
+    color: $secondaryColor;
+    margin-bottom: 5px;
+  }
+
+  .collectionLink {
+    display: inline-block;
+    background-color: $primaryColor;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+
+    &:hover {
+      background-color: darken($primaryColor, 10%);
+      transform: scale(1.05);
+    }
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}

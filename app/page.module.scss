@@ -1,41 +1,47 @@
-$primaryColor: #333;
-$secondaryColor: #666;
-
-.h1 {
-  margin-top: 20px;
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
-.supportSection {
-  text-align: center;
-  margin-top: 5px;
-  background-color: #f9f9f9;
-
-  p {
-    font-size: 16px;
-    color: $secondaryColor;
-    margin-bottom: 5px;
-  }
-
-  .collectionLink {
-    display: inline-block;
-    background-color: $primaryColor;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 5px;
-
-    &:hover {
-      background-color: darken($primaryColor, 10%);
-      transform: scale(1.05);
-    }
-  }
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.body {
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  border-top: 1px solid #696868;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
+  font-size: 2em;
+  width: 100%;
+  height: 100%;
+}
+.collectionLink {
+  color: #565555;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(164, 162, 162);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.collectionLink:hover {
+  transform: scale(1.03);
 }

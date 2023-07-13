@@ -25,33 +25,42 @@ export default function RegisterForm() {
     }
 
     console.log(data.user);
-    router.push(`/profile/${data.user.username}`);
+    router.push(`/`);
     // we may have in the future revalidatePath()
     router.refresh();
   }
 
   return (
-    <form onSubmit={(event) => event.preventDefault()} className={styles.form}>
-      <h4>Create an account</h4>
-      <label>
-        Username:
-        <input
-          value={username}
-          onChange={(event) => setUsername(event.currentTarget.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.currentTarget.value)}
-        />
-      </label>
-      <button onClick={async () => await register()} className={styles.button}>
-        sign up
-      </button>
-      {error !== '' && <div className={styles.error}>{error}</div>}
-    </form>
+    <main className={styles.loginContainer}>
+      <form
+        onSubmit={(event) => event.preventDefault()}
+        className={styles.formContainer}
+      >
+        <div>
+          <h4 className={styles.h4}>Create an account</h4>
+
+          <input
+            placeholder="Username"
+            value={username}
+            onChange={(event) => setUsername(event.currentTarget.value)}
+          />
+
+          <input
+            placeholder="Password"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.currentTarget.value)}
+          />
+
+          <button
+            onClick={async () => await register()}
+            className={styles.button}
+          >
+            sign up
+          </button>
+          {error !== '' && <div className={styles.error}>{error}</div>}
+        </div>
+      </form>
+    </main>
   );
 }

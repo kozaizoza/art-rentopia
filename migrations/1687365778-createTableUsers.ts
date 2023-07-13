@@ -3,8 +3,8 @@ import { Sql } from 'postgres';
 export type User = {
   id: number;
   username: string;
-  email: string| null;
-  roleName: string | null;
+  email: string | null;
+  author: string | null;
   bio: string;
 };
 
@@ -15,7 +15,7 @@ export async function up(sql: Sql) {
       username varchar(80) NOT NULL UNIQUE,
       email varchar(80),
       password_hash varchar(160) NOT NULL,
-      role_name varchar(40),
+      author varchar(40),
       bio varchar(600)
     )
   `;

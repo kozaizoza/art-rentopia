@@ -31,50 +31,52 @@ export default function LoginForm(props: Props) {
     }
 
     // if credentials correct, redirect to HomePageWhenLoggedIn
-    router.push(
-      getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
-    );
+    router.push(getSafeReturnToPath(props.returnTo) || (`/` as Route));
     // we may have in the future revalidatePath()
     router.refresh();
   }
 
   return (
-    <div className={styles.loginContainer}>
-      <div>
-        <h4>Welcome back</h4>
-
-        <form
-          onSubmit={(event) => event.preventDefault()}
-          className={styles.form}
-        >
-          <label htmlFor="username">Username:</label>
-          <input
-            value={username}
-            onChange={(event) => setUsername(event.currentTarget.value)}
-          />
-
-          <div className={styles.div}>
-            <label htmlFor="username">Password:</label>
+    <main className={styles.loginContainer}>
+      <div className={styles.formContainer}>
+        <div>
+          <h4>Welcome back</h4>
+          <form
+            onSubmit={(event) => event.preventDefault()}
+            className={styles.form}
+          >
             <input
-              value={password}
-              type="password"
-              onChange={(event) => setPassword(event.currentTarget.value)}
+              placeholder="Username"
+              value={username}
+              onChange={(event) => setUsername(event.currentTarget.value)}
             />
-          </div>
-          <button onClick={async () => await login()} className={styles.button}>
-            log in
-          </button>
-          {error !== '' && <div className={styles.error}>{error}</div>}
-        </form>
+
+            <div className={styles.div}>
+              <input
+                placeholder="Password"
+                value={password}
+                type="password"
+                onChange={(event) => setPassword(event.currentTarget.value)}
+              />
+            </div>
+            <button
+              onClick={async () => await login()}
+              className={styles.button}
+            >
+              log in
+            </button>
+            {error !== '' && <div className={styles.error}>{error}</div>}
+          </form>
+        </div>
+        <div>
+          <p className={styles.p}>
+            Don't have an account yet?
+            <Link href="/register" className={styles.body}>
+              Register here
+            </Link>
+          </p>
+        </div>
       </div>
-      <div>
-        <p className={styles.p}>
-          Don't have an account yet?
-          <Link href="/register" className={styles.body}>
-            Register here
-          </Link>
-        </p>
-      </div>
-    </div>
+    </main>
   );
 }

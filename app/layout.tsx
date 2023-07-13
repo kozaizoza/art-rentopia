@@ -20,27 +20,44 @@ export default async function RootLayout({ children }: LayoutProps) {
   const cookieStore = cookies();
   const token = cookieStore.get('sessionToken');
   console.log(token);
+
   const user = !token?.value ? undefined : await getUserByToken(token.value);
   console.log(user);
+
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <header className={styles.header}>
-          {user ? (
-            <div className={styles.username}>
-              <div>{user.username}</div>
-              <LogoutButton />
-            </div>
-          ) : (
-            <ul className={styles.navbar}>
-              <li className={styles.register}>
-                <Link href="/register">Register</Link>
+          <nav>
+            <Link href="/" className={styles.h1}>
+              Art Rentopia
+            </Link>
+            <ul>
+              <li>
+                <Link href="/artworks">Artworks</Link>
               </li>
-              <li className={styles.button}>
-                <Link href="/login">Log in</Link>
+              <li>
+                <Link href="/upload">Get involved</Link>
               </li>
             </ul>
-          )}
+            <div>
+              {user ? (
+                <div className={styles.username}>
+                  <div>{user.username}</div>
+                  <LogoutButton />
+                </div>
+              ) : (
+                <ul>
+                  <li className={styles.register}>
+                    <Link href="/register">Register</Link>
+                  </li>
+                  <li className={styles.button}>
+                    <Link href="/login">Log in</Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </nav>
         </header>
         <main>{children}</main>
       </body>

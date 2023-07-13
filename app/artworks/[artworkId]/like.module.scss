@@ -1,0 +1,17 @@
+.likeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  .heartShape {
+    font-size: 2.9rem;
+  }
+
+  .heartShapeRed {
+    color: red;
+  }
+}
+.message {
+  padding-bottom: 20px;
+  color: red;
+}

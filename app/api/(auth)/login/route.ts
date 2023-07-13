@@ -104,7 +104,7 @@ export async function POST(
         username: userWithPasswordHash.username,
         id: userWithPasswordHash.id,
         email: userWithPasswordHash.email,
-        roleName: userWithPasswordHash.roleName,
+        author: userWithPasswordHash.author,
         bio: userWithPasswordHash.bio,
       },
     },

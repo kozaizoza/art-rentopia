@@ -123,8 +123,7 @@ export default function UploadForm(props: Props) {
             )}
           </div>
           <button
-            className={styles.button}
-            // onClick={async () => await uploadArtwork()}
+          // onClick={async () => await uploadArtwork()}
           >
             Upload Artwork
           </button>

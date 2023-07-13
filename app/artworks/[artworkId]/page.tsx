@@ -53,8 +53,8 @@ export default async function ArtworkPage(props: Props) {
         <h4>{singleArtwork.author}</h4>
         <p className={styles.title}>Title: {singleArtwork.artworkName}</p>
         <p>{singleArtwork.description}</p>
+        <DeleteArtworks artwork={singleArtwork} user={user} />
       </div>
-      <DeleteArtworks artwork={singleArtwork} user={user} />
     </main>
   );
 }

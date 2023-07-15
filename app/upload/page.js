@@ -30,7 +30,12 @@ export default async function UploadPage() {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.container}>
-        <h3>Hello {user.username}!</h3>
+        <h3>
+          Hello{' '}
+          {user.username.charAt(0).toUpperCase() +
+            user.username.slice(1).toLowerCase()}
+          !
+        </h3>
         <p>
           Discover, showcase, and connect with our artist platform. Upload your
           artwork and engage with interested individuals who appreciate your

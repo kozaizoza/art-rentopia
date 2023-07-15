@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import { getArtworkById } from '../../../database/artworks';
 import { getUserByToken } from '../../../database/users';
 import styles from './singleArtwork.module.scss';
-import Like from './Like';
+import Like from '../../components/Like';
 import DeleteArtworks from './DeleteArtworks';
+import ContactMeButton from '../../components/ContactButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -54,6 +55,7 @@ export default async function ArtworkPage(props: Props) {
         <p className={styles.title}>Title: {singleArtwork.artworkName}</p>
         <p>{singleArtwork.description}</p>
         <DeleteArtworks artwork={singleArtwork} user={user} />
+        <ContactMeButton />
       </div>
     </main>
   );

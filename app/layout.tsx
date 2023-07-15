@@ -43,7 +43,10 @@ export default async function RootLayout({ children }: LayoutProps) {
             <div>
               {user ? (
                 <div className={styles.username}>
-                  <div>{user.username}</div>
+                  <div>
+                    {user.username.charAt(0).toUpperCase() +
+                      user.username.slice(1).toLowerCase()}
+                  </div>
                   <LogoutButton />
                 </div>
               ) : (
